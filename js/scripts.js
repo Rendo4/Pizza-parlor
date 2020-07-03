@@ -13,7 +13,7 @@ Order.prototype.assignId = function () {
   return this.currentId;
 }
 
-Order.prototype.findpizza = function (id) {
+Order.prototype.findPizza = function (id) {
   for (let i = 0; i < this.pizzas.length; i++) {
     if (this.pizzas[i]) {
       if (this.pizzas[i].id == id) {
@@ -66,7 +66,7 @@ function showPizza(pizzaId) {
 
 function attachContactListeners() {
   $("ul#order").on("click", "li", function () {
-    showOrder(this.id);
+    showPizza(this.id);
   });
   $("#buttons").on("click", ".deleteButton", function() {
     order.deletePizza(this.id);
@@ -79,13 +79,13 @@ $(document).ready(function () {
   attachContactListeners();
   $("form#pizza").submit(function (event) {
     event.preventDefault();
-    const inputtedCrust = $("input.crust").val();
-    const inputtedSauce = $("input.sauce").val();
-    const inputtedToppings = $("input.toppings").val();
+    const inputtedCrust = $("input:radio[name=crust]:checked").val();
+    const inputtedSauce = $("input:radio[name=sauce]:checked").val();
+    const inputtedToppings = $("input:checkbox[name=top]:checked").each(function(){
+      const tops = $(this).val();
+      $(".toppings").append(tops)
+    })
     let newPizza = new Pizza(inputtedCrust, inputtedSauce, inputtedToppings);
-    $("input.crust").val("");
-    $("input.sauce").val("");
-    $("input.toppings").val("");
     order.addPizza(newPizza);
     displayPizzaDetails(order);
   })
