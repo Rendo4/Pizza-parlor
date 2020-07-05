@@ -13,6 +13,10 @@ Order.prototype.assignId = function () {
   return this.currentId;
 }
 
+Pizza.prototype.cost = function() {
+  return this.crustCost + toppingCost
+}
+
 Order.prototype.findPizza = function (id) {
   for (let i = 0; i < this.pizzas.length; i++) {
     if (this.pizzas[i]) {
@@ -78,14 +82,15 @@ function attachContactListeners() {
 $(document).ready(function () {
   attachContactListeners();
   $("form#pizza").submit(function (event) {
+    tops = []
     event.preventDefault();
     const inputtedCrust = $("input:radio[name=crust]:checked").val();
     const inputtedSauce = $("input:radio[name=sauce]:checked").val();
     const inputtedToppings = $("input:checkbox[name=top]:checked").each(function(){
-      const tops = $(this).val();
-      $(".toppings").append(tops)
+      const toppings = $(this).val()
+      tops.push(toppings)
     })
-    let newPizza = new Pizza(inputtedCrust, inputtedSauce, inputtedToppings);
+    let newPizza = new Pizza(inputtedCrust, inputtedSauce, tops);
     order.addPizza(newPizza);
     displayPizzaDetails(order);
   })

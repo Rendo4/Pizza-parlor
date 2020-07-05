@@ -103,16 +103,18 @@
           </label>
         </div> <br>
         <p><strong>Choose your favorite toppings!</strong></p>
-        <input type="checkbox" name="top" value="pep">Pepperoni<br>
-        <input type="checkbox" name="top" value="ham">Ham<br>
-        <input type="checkbox" name="top" value="sausage">Sausage<br>
-        <input type="checkbox" name="top" value="beef">Beef<br>
-        <input type="checkbox" name="top" value="Mushroom">Mushroom<br>
-        <input type="checkbox" name="top" value="olives">Olives<br>
-        <input type="checkbox" name="top" value="pineapple">Pineapple<br>
-        <input type="checkbox" name="top" value="onions">Onions<br>
-        <input type="checkbox" name="top" value="greenp">Green Peppers<br>
-        <button type="submit" class="btn-primary">Add</button>
+        <div id="tops">
+          <input type="checkbox" name="top" value="Pepperoni ">Pepperoni<br>
+          <input type="checkbox" name="top" value="Ham ">Ham<br>
+          <input type="checkbox" name="top" value="Sausage ">Sausage<br>
+          <input type="checkbox" name="top" value="Beef ">Beef<br>
+          <input type="checkbox" name="top" value="Mushroom ">Mushroom<br>
+          <input type="checkbox" name="top" value="olives ">Olives<br>
+          <input type="checkbox" name="top" value="Pineapple ">Pineapple<br>
+          <input type="checkbox" name="top" value="Onions ">Onions<br>
+          <input type="checkbox" name="top" value="Green peppers ">Green Peppers<br>
+          <button type="submit" class="btn-primary">Add</button>
+        </div>
       </form>
       <hr>
       <h2>Your order:</h2>
@@ -121,10 +123,10 @@
     </div>
     <div class="col-md-6">
       <div id="show-order">
-        <p>Crust and size: <span class="crust"></span></p>
-        <p>Sauce: <span class="sauce"></span></p>
-        <p>Toppings: <span class="toppings"></span></p>
-        <div id="buttons">
+        <p><strong>Crust and size: </strong><span class="crust"></span></p>
+        <p><strong>Sauce: </strong><span class="sauce"></span></p>
+        <p><strong>Toppings: </strong><span class="toppings"></span></p>
+        <div id="buttons"></div>
         </div>
       </div>
       <h4>Your total is: <span class="total"></span></h4>
