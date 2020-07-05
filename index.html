@@ -6,7 +6,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/scripts.js"></script>
     <title>Ryan's Pizzaria</title>
-    <title></title>
   </head>
   <body>
     <div class="container">
@@ -15,104 +14,39 @@
       <h2>Craft your own Pizza:</h2>
       <p>What style of Pizza would you like?</p>
       <form id="pizza">
-        <div class="radio">
-          <label>
-            <input type="radio" name="crust" value="Glutten Free 10" checked>
-            Glutten Free 10"
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="crust" value="Vegan 12">
-            Vegan 12"
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-           <input type="radio" name="crust" value="HandTossed 12">
-           Handtossed 12"
-          </label>
-        </div>  
-        <div class="radio">
-          <label>
-            <input type="radio" name="crust" value="Thin Crust 12">
-            Thin Crust 12"
-          </label>
-        </div>  
-        <div class="radio">
-          <label>
-           <input type="radio" name="crust" value="Vegan 14">
-           Vegan 14"
-          </label>
-        </div>
-        <div class="radio">
-         <label>
-            <input type="radio" name="crust" value="Handtossed 14">
-           Handtossed 14"
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="crust" value="Thin Crust 14">
-            Thin Crust 14"
-          </label>
-        </div>
-        <div class="radio">
-         <label>
-          <input type="radio" name="crust" value="XLarge 16">
-          XLarge 16"
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="crust" value='Monster 20'>
-            Monster 20' (for the really hungry)
-          </label>
-        </div><br>
-      
+          <label><input type="radio" name="size" value="Small" class=6>Small </label>
+          <label><input type="radio" name="size" value="Medium" class=8>Medium</label>
+          <label><input type="radio" name="size" value="Large" class =10>Large</label>
+          <label><input type="radio" name="size" value="Xlarge" class=12>XLarge</label>
+        <br>
 
         <p><strong>Choose one of our amazing sauces!(or none is cool too)</strong></p>
         <div class="radio">
-          <label>
-            <input type="radio" name="sauce" value="none">
-            No sauce
-          </label>
+          <label><input type="radio" name="sauce" value="No sauce">No sauce </label>
         </div>
         <div class="radio">
-         <label>
-            <input type="radio" name="sauce" value="Classic Marinara">
-           Classic Marinara
-          </label>
+          <label><input type="radio" name="sauce" value="Classic Marinara">Classic Marinara</label>
         </div>
         <div class="radio">
-         <label>
-            <input type="radio" name="sauce" value="Garlic Parmasean">
-            Garlic parmasean
-          </label>
+          <label><input type="radio" name="sauce" value="Garlic Parmasean">Garlic parmasean</label>
         </div>
         <div class="radio">
-          <label>
-            <input type="radio" name="sauce" value="Sweet Barbeque sauce">
-            Sweet Barbeque sauce
-          </label>
+          <label><input type="radio" name="sauce" value="Sweet Barbeque sauce">Sweet Barbeque sauce</label>
         </div>
         <div class="radio">
-          <label>
-            <input type="radio" name="sauce" value="Buffalo Sauce">
-            Buffalo sauce
-          </label>
+          <label><input type="radio" name="sauce" value="Buffalo Sauce">Buffalo sauce</label>
         </div> <br>
         <p><strong>Choose your favorite toppings!</strong></p>
         <div id="tops">
-          <input type="checkbox" name="top" value="Pepperoni ">Pepperoni<br>
-          <input type="checkbox" name="top" value="Ham ">Ham<br>
-          <input type="checkbox" name="top" value="Sausage ">Sausage<br>
-          <input type="checkbox" name="top" value="Beef ">Beef<br>
-          <input type="checkbox" name="top" value="Mushroom ">Mushroom<br>
-          <input type="checkbox" name="top" value="olives ">Olives<br>
-          <input type="checkbox" name="top" value="Pineapple ">Pineapple<br>
-          <input type="checkbox" name="top" value="Onions ">Onions<br>
-          <input type="checkbox" name="top" value="Green peppers ">Green Peppers<br>
+          <input type="checkbox" name="top" value=" Pepperoni">Pepperoni<br>
+          <input type="checkbox" name="top" value=" Ham">Ham<br>
+          <input type="checkbox" name="top" value=" Sausage">Sausage<br>
+          <input type="checkbox" name="top" value=" Beef">Beef<br>
+          <input type="checkbox" name="top" value=" Mushroom">Mushroom<br>
+          <input type="checkbox" name="top" value=" Olives">Olives<br>
+          <input type="checkbox" name="top" value=" Pineapple">Pineapple<br>
+          <input type="checkbox" name="top" value=" Onions">Onions<br>
+          <input type="checkbox" name="top" value=" Green peppers">Green Peppers<br>
           <button type="submit" class="btn-primary">Add</button>
         </div>
       </form>
@@ -123,9 +57,10 @@
     </div>
     <div class="col-md-6">
       <div id="show-order">
-        <p><strong>Crust and size: </strong><span class="crust"></span></p>
+        <p><strong>Size: </strong><span class="size"></span></p>
         <p><strong>Sauce: </strong><span class="sauce"></span></p>
         <p><strong>Toppings: </strong><span class="toppings"></span></p>
+        <p><strong>Cost: $</strong><span class="cost"></span></p>
         <div id="buttons"></div>
         </div>
       </div>
