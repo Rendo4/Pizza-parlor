@@ -74,11 +74,6 @@ function displayPizzaDetails(orderToDisplay) {
   pizzasList.html(htmlForPizzaInfo);
 };
 
-function showTotal() {
-  const orderTotal = order.total(cost)
-  $(".total").html(orderTotal)
-}
-
 function showPizza(pizzaId) {
   const pizza = order.findPizza(pizzaId)
   $("#show-order").show();
