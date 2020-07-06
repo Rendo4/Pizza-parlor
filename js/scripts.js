@@ -11,17 +11,21 @@ function cost(inputtedSize) {
   } else if (inputtedSize === "Large") {
     inputtedSize = 10;
   } else { (inputtedSize === "Xlarge")
-    inputtedSize= 12;
+    inputtedSize = 12;
   }
   return inputtedSize;
 };
 
-Order.prototype.total = function (pizzas) {
-  let total = 0
-  this.pizzas.forEach(function(cost) {
-  total += cost  
-  })
-};
+let totalCost = 0
+function orderTotal(total) {
+  for(var i = 0; i < total.length; i++){
+    totalCost += 0
+      total.forEach(function(element) {
+      totalCost += element;
+    })
+  }
+  $("#sum").text(totalCost)
+}
 
 Order.prototype.addPizza = function (pizza) {
   pizza.id = this.assignId();
@@ -101,17 +105,19 @@ $(document).ready(function () {
   attachContactListeners();
   $("form#pizza").submit(function (event) {
     event.preventDefault();
+    total = []
     tops = []
     const inputtedSize = $("input:radio[type=radio]:checked").val();
     const inputtedSauce = $("input:radio[name=sauce]:checked").val();
     const inputtedToppings = $("input:checkbox[name=top]:checked").each(function(){
       const toppings = $(this).val()
       tops.push(toppings)
-    })
+    });
     const pizzaCost = cost(inputtedSize) + tops.length
+    total.push(pizzaCost)
     let newPizza = new Pizza(inputtedSize, inputtedSauce, tops, pizzaCost);
     order.addPizza(newPizza);
     displayPizzaDetails(order);
-    $("#total").append(total)
+    orderTotal(total)
   })
 })
