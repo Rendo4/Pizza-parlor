@@ -16,6 +16,16 @@ function cost(inputtedSize) {
   return inputtedSize;
 };
 
+function deleteCost (total) {
+  for(var i = 0; i < total.length; i++){
+    totalCost += 0
+      total.forEach(function(element) {
+      totalCost -= element;
+    })
+  }
+  $("#sum").text(totalCost)
+}
+
 let totalCost = 0
 function orderTotal(total) {
   for(var i = 0; i < total.length; i++){
@@ -96,6 +106,7 @@ function attachContactListeners() {
   });
   $("#buttons").on("click", ".deleteButton", function() {
     order.deletePizza(this.id);
+    deleteCost(total)
     $("#show-order").hide();
     displayPizzaDetails(order);
   });
