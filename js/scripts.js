@@ -16,24 +16,23 @@ function cost(inputtedSize) {
   return inputtedSize;
 };
 
-function deleteCost (total) {
+function deleteCost (total, pizza) {
+  let totalCost= 0
   for(var i = 0; i < total.length; i++){
-    totalCost += 0
-      total.forEach(function(element) {
-      totalCost -= element;
-    })
-  }
+    //code to target and remove from an array here
+    totalCost = total.reduce(function(a, b){
+    return a + b;
+    }, 0);
   $("#sum").text(totalCost)
+  }
 }
 
-let totalCost = 0
+
 function orderTotal(total) {
-  for(var i = 0; i < total.length; i++){
-    totalCost += 0
-      total.forEach(function(element) {
-      totalCost += element;
-    })
-  }
+  let totalCost = 0
+  totalCost = total.reduce(function(a, b){
+  return a + b;
+  }, 0);
   $("#sum").text(totalCost)
 }
 
@@ -112,11 +111,12 @@ function attachContactListeners() {
   });
 }
 
+// find a way to make not a global varriable
+total = []
 $(document).ready(function () {
   attachContactListeners();
   $("form#pizza").submit(function (event) {
     event.preventDefault();
-    total = []
     tops = []
     const inputtedSize = $("input:radio[type=radio]:checked").val();
     const inputtedSauce = $("input:radio[name=sauce]:checked").val();
