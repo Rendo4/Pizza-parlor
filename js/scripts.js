@@ -16,17 +16,9 @@ function cost(inputtedSize) {
   return inputtedSize;
 };
 
-function deleteCost (total, pizza) {
-  let totalCost= 0
-  for(var i = 0; i < total.length; i++){
-    //code to target and remove from an array here
-    totalCost = total.reduce(function(a, b){
-    return a + b;
-    }, 0);
-  $("#sum").text(totalCost)
-  }
+function deleteCost(value) {
+ return value !== 13
 }
-
 
 function orderTotal(total) {
   let totalCost = 0
@@ -99,14 +91,17 @@ function showPizza(pizzaId) {
   buttons.append("<button class='deleteButton' id=" + pizza.id + ">Delete<button>");
 }
 
+
 function attachContactListeners() {
   $("ul#order").on("click", "li", function () {
     showPizza(this.id);
   });
   $("#buttons").on("click", ".deleteButton", function() {
+    total2 = total.filter(deleteCost)
+    orderTotal(total2)
     order.deletePizza(this.id);
-    deleteCost(total)
     $("#show-order").hide();
+    $("#add-pizza").hide();
     displayPizzaDetails(order);
   });
 }

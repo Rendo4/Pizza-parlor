@@ -1,3 +1,7 @@
 #show-order {
   display: none;
 }
+
+#add-pizza {
+  display: show;
+}
