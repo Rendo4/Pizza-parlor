@@ -1,6 +1,6 @@
 # _{Arrays and Looping}_
 
-#### A project practicing arrays and looping to return set of numbers with exceptions. 07/10/2020
+#### A project practicing creating objects and constructors to order pizzas. 07/10/2020
 
 #### By _**{Ryan Rendon}**_
 
